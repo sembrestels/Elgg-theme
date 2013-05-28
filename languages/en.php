@@ -3,9 +3,11 @@
  * Elgg theme language file
  */
 
-return array(
-	
+$language = array(
+
 	'elgg_theme:elgg'	=> 'Powered by Elgg',
 	'elgg_theme:menu'	=> 'Menu',
-		
+
 );
+
+add_translation('en', $language);
