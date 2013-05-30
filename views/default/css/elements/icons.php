@@ -278,15 +278,6 @@
 }
 
 
-.elgg-avatar > .elgg-icon-hover-menu {
-	display: none;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	margin: 0;
-	cursor: pointer;
-}
-
 .elgg-ajax-loader {
 	background: #FFF url(<?php echo elgg_get_site_url(); ?>_graphics/ajax_loader_bw.gif) no-repeat center center;
 	min-height: 31px;
@@ -299,9 +290,17 @@
 .elgg-avatar {
 	position: relative;
 	display: inline-block;
-}
-.elgg-avatar > a > img {
-	display: block;
+	> .elgg-icon-hover-menu {
+		display: none;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		cursor: pointer;
+	}
+	> a > img {
+		display: block;
+	}
 }
 .elgg-avatar-tiny > a > img {
 	width: 25px;
@@ -331,3 +330,4 @@
 	width: 200px;
 	height: 200px;
 }
+

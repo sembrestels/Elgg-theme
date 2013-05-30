@@ -15,14 +15,14 @@
 *************************************** */
 .elgg-image-block {
 	padding: 10px 0;
-}
-.elgg-image-block .elgg-image {
-	float: left;
-	margin-right: 8px;
-}
-.elgg-image-block .elgg-image-alt {
-	float: right;
-	margin-left: 8px;
+	.elgg-image {
+		float: left;
+		margin-right: 8px;
+	}
+	.elgg-image-alt {
+		float: right;
+		margin-left: 8px;
+	}
 }
 
 /* ***************************************
@@ -31,18 +31,20 @@
 .elgg-list {
 	margin: 5px 0;
 	clear: both;
+	> li {
+		border-bottom: 1px solid #DCDCDC;
+	}
 }
-.elgg-list > li {
-	border-bottom: 1px solid #DCDCDC;
-}
-.elgg-item h3 a {
-	padding-bottom: 4px;
-}
-.elgg-item > .elgg-subtext {
-	margin-bottom: 4px;
-}
-.elgg-item .elgg-content {
-	margin: 10px 5px 10px 0;
+.elgg-item {
+	h3 a {
+		padding-bottom: 4px;
+	}
+	> .elgg-subtext {
+		margin-bottom: 4px;
+	}
+	.elgg-content {
+		margin: 10px 5px 10px 0;
+	}
 }
 .elgg-content {
 	clear: both;
@@ -55,9 +57,9 @@
 	border: none;
 	margin-right: auto;
 	margin-left: auto;
-}
-.elgg-gallery td {
-	padding: 5px;
+	td {
+		padding: 5px;
+	}
 }
 .elgg-gallery-fluid > li {
 	float: left;
@@ -72,37 +74,39 @@
 .elgg-table {
 	width: 100%;
 	border-top: 1px solid #DCDCDC;
-}
-.elgg-table td, .elgg-table th {
-	padding: 4px 8px;
-	border: 1px solid #DCDCDC;
-}
-.elgg-table th {
-	background-color: #DDD;
-}
-.elgg-table tr:nth-child(odd), .elgg-table tr.odd {
-	background-color: #FFF;
-}
-.elgg-table tr:nth-child(even), .elgg-table tr.even {
-	background-color: #F0F0F0;
+	td, th {
+		padding: 4px 8px;
+		border: 1px solid #DCDCDC;
+	}
+	th {
+		background-color: #DDD;
+	}
+	tr {
+		&:nth-child(odd), &.odd {
+			background-color: #FFF;
+		}
+		&:nth-child(even), &.even {
+			background-color: #F0F0F0;
+		}
+	}
 }
 .elgg-table-alt {
 	width: 100%;
 	border-top: 1px solid #DCDCDC;
-}
-.elgg-table-alt th {
-	background-color: #EEE;
-	font-weight: bold;
-}
-.elgg-table-alt td, .elgg-table-alt th {
-	padding: 6px 0;
-	border-bottom: 1px solid #DCDCDC;
-}
-.elgg-table-alt td:first-child {
-	width: 200px;
-}
-.elgg-table-alt tr:hover {
-	background: #E4E4E4;
+	th {
+		background-color: #EEE;
+		font-weight: bold;
+	}
+	td, th {
+		padding: 6px 0;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	td:first-child {
+		width: 200px;
+	}
+	tr:hover {
+		background: #E4E4E4;
+	}
 }
 
 /* ***************************************
@@ -146,9 +150,9 @@
 *************************************** */
 .elgg-list-river {
 	border-top: 1px solid #DCDCDC;
-}
-.elgg-list-river > li {
-	border-bottom: 1px solid #DCDCDC;
+	> li {
+		border-bottom: 1px solid #DCDCDC;
+	}
 }
 .elgg-river-item .elgg-pict {
 	margin-right: 20px;
@@ -167,12 +171,13 @@
 	margin: 8px 0 5px 0;
 	padding-left: 8px;
 }
-.elgg-river-attachments .elgg-avatar,
-.elgg-river-attachments .elgg-icon {
-	float: left;
-}
-.elgg-river-attachments .elgg-icon-arrow-right {
-	margin: 3px 8px 0;
+.elgg-river-attachments {
+	.elgg-avatar, .elgg-icon {
+		float: left;
+	}
+	.elgg-icon-arrow-right {
+		margin: 3px 8px 0;
+	}
 }
 .elgg-river-layout .elgg-input-dropdown {
 	float: right;
@@ -193,21 +198,21 @@
 .elgg-river-comments {
 	margin: 0;
 	border-top: none;
-}
-.elgg-river-comments li:first-child {
-	border-radius: 3px 0 0;
-}
-.elgg-river-comments li:last-child {
-	border-radius-bottomleft: 0 0 5px 5px;
-}
-.elgg-river-comments li {
-	background-color: #EEE;
-	border-bottom: none;
-	padding: 4px 4px 4px 10px;
-	margin-bottom: 2px;
-}
-.elgg-river-comments .elgg-media {
-	padding: 0;
+	li {
+		:first-child {
+			border-radius: 3px 0 0;
+		}
+		:last-child {
+			border-radius-bottomleft: 0 0 5px 5px;
+		}
+		background-color: #EEE;
+		border-bottom: none;
+		padding: 4px 4px 4px 10px;
+		margin-bottom: 2px;
+	}
+	.elgg-media {
+		padding: 0;
+	}
 }
 .elgg-river-more {
 	background-color: #EEE;
@@ -218,28 +223,29 @@
 }
 
 <?php //@todo location-dependent styles ?>
-.elgg-river-item form {
-	background-color: #EEE;
-	padding: 6px;
-	border-radius: 3px;		
-    height: auto;
+.elgg-river-item {
+	form {
+		background-color: #EEE;
+		padding: 6px;
+		border-radius: 3px;		
+		height: auto;
+	}
+	input[type=text] {
+		width: 78%;
+	}
+	input[type=submit] {
+		margin: 0 0 0 10px;
+	}
 }
-.elgg-river-item input[type=text] {
-	width: 78%;
-}
-.elgg-river-item input[type=submit] {
-	margin: 0 0 0 10px;
-}
-
 
 /* **************************************
 	Comments (from elgg_view_comments)
 ************************************** */
 .elgg-comments {
 	margin-top: 25px;
-}
-.elgg-comments > form {
-	margin-top: 15px;
+	> form {
+		margin-top: 15px;
+	}
 }
 
 /* ***************************************
@@ -260,18 +266,23 @@
 *************************************** */
 .elgg-tags {
 	font-size: 85%;
-}
-.elgg-tags > li {
-	float:left;
-	margin-right: 5px;
-}
-.elgg-tags li.elgg-tag:after {
-	content: ",";
-}
-.elgg-tags li.elgg-tag:last-child:after {
-	content: "";
+	> li {
+		float:left;
+		margin-right: 5px;
+	}
+	li {
+		&.elgg-tag {
+			:after {
+				content: ",";
+			}
+			&:last-child:after {
+				content: "";
+			}
+		}
+	}
 }
 .elgg-tagcloud {
 	text-align: justify;
 	margin-bottom: 5px; 
 }
+

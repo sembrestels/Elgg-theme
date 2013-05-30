@@ -19,28 +19,28 @@
 <?php // the width is on the page rather than topbar to handle small viewports ?>
 .elgg-page-default {
 	min-width: 800px;
-}
-.elgg-page-default .elgg-page-header > .elgg-inner {
-	max-width: 990px;
-	margin: 0 auto;
-	height: 80px;
-}
-.elgg-page-default .elgg-page-navbar > .elgg-inner {
-	max-width: 990px;
-	margin: 0 auto;
-	height: auto;
-}
-.elgg-page-default .elgg-page-body > .elgg-inner {
-	max-width: 990px;
-	margin: 0 auto;
-}
-.elgg-page-default .elgg-page-footer > .elgg-inner {
-	max-width: 990px;
-	margin: 0 auto;
-	padding: 5px 0;
-	border-top: 1px solid #DEDEDE;
-}
+	.elgg-page-header > .elgg-inner {
+		max-width: 990px;
+		margin: 0 auto;
+		height: 80px;
+	}
+	.elgg-page-navbar > .elgg-inner {
+		max-width: 990px;
+		margin: 0 auto;
+		height: auto;
+	}
+	.elgg-page-body > .elgg-inner {
+		max-width: 990px;
+		margin: 0 auto;
+	}
+	.elgg-page-footer > .elgg-inner {
+		max-width: 990px;
+		margin: 0 auto;
+		padding: 5px 0;
+		border-top: 1px solid #DEDEDE;
+	}
 
+}
 /***** TOPBAR ******/
 .elgg-page-topbar {
 	background: #424242;
@@ -58,12 +58,12 @@
 	right: 20px;
 	max-width: 500px;
 	z-index: 2000;
-}
-.elgg-system-messages li {
-	margin-top: 10px;
-}
-.elgg-system-messages li p {
-	margin: 0;
+	li {
+		margin-top: 10px;
+		p {
+			margin: 0;
+		}
+	}
 }
 
 /***** PAGE HEADER ******/
@@ -71,18 +71,19 @@
 	padding: 0 20px;
 	position: relative;
 	background: #60B8F7;
+	> .elgg-inner {
+		position: relative;
+	}
 }
-.elgg-page-header > .elgg-inner {
-	position: relative;
-}
+
 /***** PAGE NAVBAR ******/
 .elgg-page-navbar {
 	padding: 0 20px;
 	position: relative;
 	background: #4787B8;
-}
-.elgg-page-navbar > .elgg-inner {
-	position: relative;
+	> .elgg-inner {
+		position: relative;
+	}
 }
 
 /***** PAGE BODY LAYOUT ******/
@@ -116,19 +117,19 @@
 	position: relative;
 	min-height: 360px;
 	padding: 12px 0 10px 0;
-}
-.elgg-main > .elgg-head {
-	padding-bottom: 5px;
-	border-bottom: 1px solid #EBEBEB;
-	margin-bottom: 10px;
+	> .elgg-head {
+		padding-bottom: 5px;
+		border-bottom: 1px solid #EBEBEB;
+		margin-bottom: 10px;
+	}
 }
 .elgg-layout-one-sidebar .elgg-main {
 	float: left;
-    width: 72.525252%;
+	width: 72.525252%;
 }
 .elgg-layout-two-sidebar .elgg-main {
 	float: left;
-    width: 50.101010%;
+	width: 50.101010%;
 }
 
 /***** PAGE FOOTER ******/
@@ -136,8 +137,8 @@
 	color: #999;
 	padding: 0 10px;
 	position: relative;
+	a:hover {
+		color: #666;
+	}
 }
 
-.elgg-page-footer a:hover {
-	color: #666;
-}
