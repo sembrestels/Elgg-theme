@@ -3,7 +3,7 @@
  * General error
  */
 
-$message = elgg_echo('error:default:content');
+$message = elgg_echo('error:default');
 
 ?>
 
