@@ -92,10 +92,16 @@
 	background-position: 0 -414px;
 }
 .elgg-icon-hover-menu:hover {
-	background-position: 0 -432px;
+	background: transparent url(<?php echo elgg_get_site_url();?>mod/aalborg_theme/graphics/avatar_menu_arrows.png) no-repeat;
+	background-position: right bottom;
+	width: 100%;
+	height: 100%;
 }
 .elgg-icon-hover-menu {
-	background-position: 0 -450px;
+	background: transparent url(<?php echo elgg_get_site_url();?>mod/aalborg_theme/graphics/avatar_menu_arrows.png) no-repeat;
+	background-position: right bottom;
+	width: 100%;
+	height: 100%;
 }
 .elgg-icon-info:hover {
 	background-position: 0 -468px;
@@ -306,20 +312,20 @@
 .elgg-avatar-tiny > a > img {
 	width: 25px;
 	height: 25px;
-	
+
 	/* remove the border-radius if you don't want rounded avatars in supported browsers */
 	border-radius: 3px;
-	
+
 	background-clip:  border;
 	background-size: 25px;
 }
 .elgg-avatar-small > a > img {
 	width: 40px;
 	height: 40px;
-	
+
 	/* remove the border-radius if you don't want rounded avatars in supported browsers */
 	border-radius: 3px;
-	
+
 	background-clip:  border;
 	background-size: 40px;
 }
@@ -328,6 +334,9 @@
 	height: 100px;
 }
 .elgg-avatar-large > a > img {
-	width: 200px;
-	height: 200px;
+	max-width: 100%;
+	height: auto;
+}
+.elgg-state-banned {
+	opacity: 0.5;
 }

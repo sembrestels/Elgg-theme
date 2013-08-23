@@ -15,7 +15,7 @@ body {
 	color: #333;
 	font-size: 90%;
 	line-height: 1.4em;
-	font-family: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; 
+	font-family: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
 }
 
 a {
@@ -39,7 +39,7 @@ p:last-child {
 pre, code {
 	font-family: Monaco, "Courier New", Courier, monospace;
 	font-size: 12px;
-	
+
 	background:#EBF5FF;
 	color: #000;
 	overflow:auto;
@@ -48,7 +48,7 @@ pre, code {
 
 	white-space: pre-wrap;
 	word-wrap: break-word; /* IE 5.5-7 */
-	
+
 }
 
 pre {
@@ -77,7 +77,7 @@ blockquote {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	color: #444;
-	
+
 	text-rendering: optimizelegibility;
 }
 
@@ -91,20 +91,20 @@ h6 { font-size: 0.8em; }
 .elgg-heading-site, .elgg-heading-site:hover {
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 2em;
-	line-height: 1.4em;
+	line-height: 1.2em;
 	color: #FFF;
 	text-shadow: 1px 1px 3px #333;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 	text-decoration: none;
 }
 /* Push down headings without the class elgg-heading-main (e.g. logged out activity, friends, register) */
-.elgg-main > h2 {
-    padding-top: 16px;
+.elgg-main .elgg-head > h2 {
+	display: inline-block;
+	padding-top: 15px;
 }
 
 .elgg-heading-main {
-    display: inline-block;
-	vertical-align: -70%;
+	display: inline-block;
 	max-width: 530px;
 	margin-right: 10px;
 }
