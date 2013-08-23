@@ -125,10 +125,10 @@
 	border-radius: 3px;
 }
 .elgg-state-success {
-	background-color: #000;
+	background-color: #090;
 }
 .elgg-state-error {
-	background-color: #FF0000;
+	background-color: #F00;
 }
 .elgg-state-notice {
 	background-color: #5097CF;
@@ -146,6 +146,9 @@
 	River
 *************************************** */
 .elgg-list-river {
+	margin-top: -10px;
+}
+.elgg-river-layout .elgg-list-river {
 	border-top: 1px solid #DCDCDC;
 }
 .elgg-list-river > li {
@@ -215,7 +218,7 @@
 }
 .elgg-river-more {
 	background-color: #EEE;
-	border-radius: 3px;	
+	border-radius: 3px;
 	padding: 2px 4px;
 	font-size: 85%;
 	margin-bottom: 2px;
@@ -225,8 +228,8 @@
 .elgg-river-item form {
 	background-color: #EEE;
 	padding: 6px;
-	border-radius: 3px;		
-    height: auto;
+	border-radius: 3px;
+	height: auto;
 }
 .elgg-river-item input[type=text] {
 	width: 78%;
@@ -253,10 +256,13 @@
 	border: 1px solid #DCDCDC;
 	padding: 3px;
 	background-color: #FFF;
-	
+
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: 	border-box;
-	box-sizing: 		border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	max-width: 100%;
+	height: auto;
 }
 
 /* ***************************************
@@ -277,5 +283,6 @@
 }
 .elgg-tagcloud {
 	text-align: justify;
-	margin-bottom: 5px; 
+	margin-bottom: 5px;
 }
+
