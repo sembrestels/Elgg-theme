@@ -56,21 +56,21 @@ function aalborg_theme_pagesetup() {
 			'link_class' => 'elgg-topbar-dropdown',
 		));
 
-		$item = elgg_get_menu_item('topbar', 'usersettings');
+		$item = aalborg_theme_get_menu_item('topbar', 'usersettings');
 		if ($item) {
 			$item->setParentName('account');
 			$item->setText(elgg_echo('settings'));
 			$item->setPriority(103);
 		}
 
-		$item = elgg_get_menu_item('topbar', 'logout');
+		$item = aalborg_theme_get_menu_item('topbar', 'logout');
 		if ($item) {
 			$item->setParentName('account');
 			$item->setText(elgg_echo('logout'));
 			$item->setPriority(104);
 		}
 
-		$item = elgg_get_menu_item('topbar', 'administration');
+		$item = aalborg_theme_get_menu_item('topbar', 'administration');
 		if ($item) {
 			$item->setParentName('account');
 			$item->setText(elgg_echo('admin'));
@@ -78,7 +78,7 @@ function aalborg_theme_pagesetup() {
 		}
 
 		if (elgg_is_active_plugin('site_notifications')) {
-			$item = elgg_get_menu_item('topbar', 'site_notifications');
+			$item = aalborg_theme_get_menu_item('topbar', 'site_notifications');
 			if ($item) {
 				$item->setParentName('account');
 				$item->setText(elgg_echo('site_notifications:topbar'));
@@ -87,15 +87,43 @@ function aalborg_theme_pagesetup() {
 		}
 
 		if (elgg_is_active_plugin('reportedcontent')) {
-			$item = elgg_unregister_menu_item('footer', 'report_this');
+            $item = aalborg_theme_get_menu_item('footer', 'report_this');
+			elgg_unregister_menu_item('footer', 'report_this');
 			if ($item) {
 				$item->setText(elgg_view_icon('report-this'));
 				$item->setPriority(500);
-				$item->setSection('default');
+		    	$item->setSection('default');
 				elgg_register_menu_item('extras', $item);
 			}
 		}
 	}
+}
+
+/**
+ * Get a menu item registered for a menu
+ * Backport for elgg_theme_get_menu_item.
+ *
+ * @param string $menu_name The name of the menu
+ * @param string $item_name The unique identifier for this menu item
+ *
+ * @return ElggMenuItem
+ * @deprecated 1.9.0
+ */
+function aalborg_theme_get_menu_item($menu_name, $item_name) {
+    global $CONFIG;
+
+	if (!isset($CONFIG->menus[$menu_name])) {
+		return null;
+	}
+
+	foreach ($CONFIG->menus[$menu_name] as $index => $menu_object) {
+		/* @var ElggMenuItem $menu_object */
+		if ($menu_object->getName() == $item_name) {
+			return $CONFIG->menus[$menu_name][$index];
+		}
+	}
+
+	return null;
 }
 
 /**
